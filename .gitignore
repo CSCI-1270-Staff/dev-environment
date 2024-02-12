@@ -1,0 +1,11 @@
+*~
+\#*#
+.\#*
+
+docker/.image-version
+
+.vagrant/
+.vscode
+.gitconfig
+.bash_history
+home/
