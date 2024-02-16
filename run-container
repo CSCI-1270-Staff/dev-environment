@@ -4,12 +4,12 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 maindir=""
-container_name=cs1270-dev
-network_name=net-cs1270
-github_org=brown-csci1270
-default_user="cs1270-user"  # Username to use by default
+container_name=cs1660-dev
+network_name=net-cs1660
+github_org=brown-csci1660
+default_user="cs1660-user"  # Username to use by default
 
-image_name=cs1270-dev
+image_name=cs1660-dev
 image_url="ghcr.io/${github_org}/${image_name}"
 docker_dir="${SCRIPT_DIR}/docker"
 
