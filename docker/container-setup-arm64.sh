@@ -64,5 +64,5 @@ $SCRIPT_DIR/container-setup-common
 bash -c "mkdir /usr/local/go && wget -O - https://go.dev/dl/go1.21.6.linux-arm64.tar.gz | tar -xvz -C /usr/local"
 
 # create binary reporting version of dockerfile
-(echo '#\!/bin/sh'; echo 'echo 1') > /usr/bin/cs1660-docker-version
-chmod ugo+rx,u+w,go-w /usr/bin/cs1660-docker-version
+(echo '#\!/bin/sh'; echo 'echo 1') > /usr/bin/cs1270-docker-version
+chmod ugo+rx,u+w,go-w /usr/bin/cs1270-docker-version

@@ -18,13 +18,13 @@ COPY .image-version /etc/image-version
 RUN /usr/local/bin/container-setup-amd64
 
 # git build arguments
-ARG USER=cs1660\ User
+ARG USER=cs1270\ User
 ARG EMAIL=nobody@example.com
 
 # configure your environment
-USER cs1660-user
+USER cs1270-user
 
 ENTRYPOINT ["container-entrypoint"]
 
-WORKDIR /home/cs1660
+WORKDIR /home/cs1270
 CMD ["/bin/bash", "-l"]

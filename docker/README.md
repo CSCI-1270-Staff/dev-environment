@@ -39,7 +39,7 @@ Disadvantages of Docker:
    The command starts up a virtual Linux-based computer running inside your
    computer. It then installs a bunch of software useful for CS 1660 on that
    environment, then takes a snapshot of the running environment. (The
-   snapshot has a name, such as `cs1660-dev:latest` or `cs1660-dev:arm64`.) Once
+   snapshot has a name, such as `cs1270-dev:latest` or `cs1270-dev:arm64`.) Once
    the snapshot is created, it’ll take just a second or so for Docker to restart
    it.
 
@@ -56,18 +56,18 @@ the container image for some reason, you can also build the container
 manually.  To do this, use the script `./build-container` instead.  
 
 > `./build-container` is a wrapper around `docker build`. On x86-64 hosts, it runs
-> `docker build -t cs1660:latest -f Dockerfile --platform linux/amd64`.
+> `docker build -t cs1270:latest -f Dockerfile --platform linux/amd64`.
 
 ## Running the CS 1660 Docker container by script
 
-In the parent directory of this one (the cs1660-devenv repository root), you'll
-find a file called `cs1660-run-docker`. This is a script that runs your CS 1660
+In the parent directory of this one (the cs1270-devenv repository root), you'll
+find a file called `cs1270-run-docker`. This is a script that runs your CS 1660
 Docker container.
 
 For example, here’s an example of running CS 1660 Docker on a macOS host. At
 first, `uname` (a program that prints the name of the currently running
 operating system) reports `Darwin` (the name of the macOS kernel). But after
-`./cs1660-run-docker` connects the terminal to a Linux container, `uname`
+`./cs1270-run-docker` connects the terminal to a Linux container, `uname`
 reports `Linux`. At the end of the example, `exit` quits the Docker
 environment and returns the terminal to macOS.
 
@@ -76,29 +76,29 @@ $ uname
 Darwin
 $ uname -a
 Darwin bashful.local 21.1.0 Darwin Kernel Version 21.1.0: Wed Oct 13 17:33:24 PDT 2021; root:xnu-8019.41.5~1/RELEASE_ARM64_T8101 arm64
-$ ./cs1660-run-docker
-cs1660-user@a47f05ea5085:~$ uname
+$ ./cs1270-run-docker
+cs1270-user@a47f05ea5085:~$ uname
 Linux
-cs1660-user@a47f05ea5085:~$ uname -a
+cs1270-user@a47f05ea5085:~$ uname -a
 Linux 4f789b721d16 5.10.47-linuxkit #1 SMP PREEMPT Sat Jul 3 21:50:16 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux
-cs1660-user@a47f05ea5085:~$ exit
+cs1270-user@a47f05ea5085:~$ exit
 exit
 $
 ```
 
-A prompt like `cs1660-user@a47f05ea5085:~$` means that your terminal is
+A prompt like `cs1270-user@a47f05ea5085:~$` means that your terminal is
 connected to the container. (The `a47f05ea5085` part is a unique identifier for this
 running container.) You can execute any Linux commands you want. To escape from the
 container, type Control-D or run the `exit` command.
 
-The script assumes your Docker container is named `cs1660:latest`.
+The script assumes your Docker container is named `cs1270:latest`.
 
 ### Running CS 1660 Docker by hand
 
 If you don’t want to use the script, use a command like the following.
 
 ```shellsession
-docker run -it --platform linux/amd64 -v ~/cs1660-dev/home:/home/cs1660-user cs1660-dev:latest
+docker run -it --platform linux/amd64 -v ~/cs1270-dev/home:/home/cs1270-user cs1270-dev:latest
 ```
 
 Explanation:
@@ -110,22 +110,22 @@ Explanation:
   laptop and are working on assignments that require an x86-64 Intel machine.
 * `-v LOCALDIR:LINUXDIR` says Docker should share a directory between your
   host and the Docker container. Here, I’ve asked for the host’s
-  `~/cs1660-dev/home` directory to be mapped inside the container
-  onto the `/home/cs1660-user` directory, which is the virtual machine
+  `~/cs1270-dev/home` directory to be mapped inside the container
+  onto the `/home/cs1270-user` directory, which is the virtual machine
   user’s home directory.
-* `cs1660-dev:latest` names the Docker image to run (namely, the one you built).
+* `cs1270-dev:latest` names the Docker image to run (namely, the one you built).
 
 Here’s an example session:
 
 ```shellsession
-$ docker run -it --platform linux/amd64 --rm -v ~/cs1660-dev/home:/home/cs1660-user cs1660-dev:latest
-cs1660-user@a15e6c4c8dbe:~$ ls
-cs1660-s23-projects
-cs1660-user@a15e6c4c8dbe:~$ echo "Hello, world"
+$ docker run -it --platform linux/amd64 --rm -v ~/cs1270-dev/home:/home/cs1270-user cs1270-dev:latest
+cs1270-user@a15e6c4c8dbe:~$ ls
+cs1270-s23-projects
+cs1270-user@a15e6c4c8dbe:~$ echo "Hello, world"
 Hello, world
-cs1660-user@a15e6c4c8dbe:~$ cs1660-docker-version
+cs1270-user@a15e6c4c8dbe:~$ cs1270-docker-version
 1
-cs1660-user@a15e6c4c8dbe:~$ exit
+cs1270-user@a15e6c4c8dbe:~$ exit
 exit
 $
 ```
@@ -144,17 +144,15 @@ to authenticate with Docker.
 
 Once your credentials are set up, you should be able to push the
 compiled image like this:
+
 ```
 # Build the latest image
-./cs1660-run-docker setup
+./cs1270-run-docker setup
 
 # Push the image to the repository
-./cs1660-run-docker push-release
+./cs1270-run-docker push-release
 ```
-
 
 ## Acknowledgments
 
-This setup is a modified version of the setup used by
-[CSCI0300](https://cs.brown.edu/courses/csci0300) and reused with
-permission, which is based on [Harvard's CS61](https://cs61.seas.harvard.edu/site/2021/).  
+This setup is a modified version of the setup used by [CSCI1660](https://cs.brown.edu/courses/csci1660) and reused with permission, which is based on [CSCI0300](https://cs.brown.edu/courses/csci0300) and [Harvard's CS61](https://cs61.seas.harvard.edu/site/2021/).  
