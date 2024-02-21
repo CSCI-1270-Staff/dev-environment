@@ -1,12 +1,12 @@
-CS 1660 Container Environment
+CS 1270 Container Environment
 =============
 
 The Docker container-based virtualization service lets you run a
-minimal CS 1660 environment, including Linux, on a macOS or Windows
+minimal CS 1270 environment, including Linux, on a macOS or Windows
 computer, without the overhead of a full virtual machine like VMware
 Workstation, VMware Fusion, or VirtualBox.
 
-It should be possible to do *all* CS 1660 assignments in the CS 1660 Docker
+It should be possible to do *all* CS 1270 assignments in the CS 1270 Docker
 container.
 
 Advantages of using a container environment with Docker:
@@ -19,13 +19,13 @@ Advantages of using a container environment with Docker:
 Disadvantages of Docker:
 
 * Docker does not easily offer a graphical environment. You will need
-  to run all CS 1660 programs exclusively in the terminal.
+  to run all CS 1270 programs exclusively in the terminal.
 * Docker technology is less user-friendly than virtual machines. You’ll have
   to type weird commands.
 * You won’t get the fun, different feeling of a graphical Linux desktop,
   like the one you see in lectures..
 
-## Loading the CS 1660 Docker container
+## Loading the CS 1270 Docker container
 
 1. Download and install [Docker][].
 
@@ -37,7 +37,7 @@ Disadvantages of Docker:
     ```
 
    The command starts up a virtual Linux-based computer running inside your
-   computer. It then installs a bunch of software useful for CS 1660 on that
+   computer. It then installs a bunch of software useful for CS 1270 on that
    environment, then takes a snapshot of the running environment. (The
    snapshot has a name, such as `cs1270-dev:latest` or `cs1270-dev:arm64`.) Once
    the snapshot is created, it’ll take just a second or so for Docker to restart
@@ -58,13 +58,13 @@ manually.  To do this, use the script `./build-container` instead.
 > `./build-container` is a wrapper around `docker build`. On x86-64 hosts, it runs
 > `docker build -t cs1270:latest -f Dockerfile --platform linux/amd64`.
 
-## Running the CS 1660 Docker container by script
+## Running the CS 1270 Docker container by script
 
 In the parent directory of this one (the cs1270-devenv repository root), you'll
-find a file called `cs1270-run-docker`. This is a script that runs your CS 1660
+find a file called `cs1270-run-docker`. This is a script that runs your CS 1270
 Docker container.
 
-For example, here’s an example of running CS 1660 Docker on a macOS host. At
+For example, here’s an example of running CS 1270 Docker on a macOS host. At
 first, `uname` (a program that prints the name of the currently running
 operating system) reports `Darwin` (the name of the macOS kernel). But after
 `./cs1270-run-docker` connects the terminal to a Linux container, `uname`
@@ -93,7 +93,7 @@ container, type Control-D or run the `exit` command.
 
 The script assumes your Docker container is named `cs1270:latest`.
 
-### Running CS 1660 Docker by hand
+### Running CS 1270 Docker by hand
 
 If you don’t want to use the script, use a command like the following.
 

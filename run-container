@@ -6,7 +6,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 maindir=""
 container_name=cs1270-dev
 network_name=net-cs1270
-github_org=brown-csci1660
+github_org=CSCI-1270-Staff
 default_user="cs1270-user"  # Username to use by default
 
 image_name=cs1270-dev

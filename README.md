@@ -1,6 +1,6 @@
-# CS 1660: development environment
+# CS 1270: development environment
 
-This repo contains a minimal dev environment setup for CS 1660. In particular,
+This repo contains a minimal dev environment setup for CS 1270. In particular,
 it provides the scripts to create the course Docker container.
 
 ## Getting started
