@@ -15,23 +15,13 @@ apt-get update &&\
   yes | unminimize
 
 # install GCC-related packages
+# removed gdb (c debugger), libblas-dev and liblapack-dev (linear algebra routines), and doc packages
+# potential to remove: g++-multilib (for cross-compiling to different architectures)
 apt-get update && apt-get -y install\
  build-essential\
- binutils-doc\
- cpp-doc\
- gcc-doc\
  g++\
  g++-multilib\
- gdb\
- gdbserver\
- gdb-doc\
- glibc-doc\
- libblas-dev\
- liblapack-dev\
- liblapack-doc\
- libstdc++-11-doc\
- make\
- make-doc
+ make
 
 # Do main setup
 $SCRIPT_DIR/container-setup-common $target_user

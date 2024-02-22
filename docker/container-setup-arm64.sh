@@ -20,20 +20,8 @@ apt-get update &&
 # install GCC-related packages
 apt-get update && apt-get -y install\
  build-essential\
- binutils-doc\
- cpp-doc\
- gcc-doc\
  g++\
- gdb\
- gdbserver\
- gdb-doc\
- glibc-doc\
- libblas-dev\
- liblapack-dev\
- liblapack-doc\
- libstdc++-11-doc\
- make\
- make-doc
+ make
 
 # install GCC-related packages for amd64
 apt-get -y install\
@@ -44,9 +32,7 @@ apt-get -y install\
  libasan5:amd64\
  libtsan0:amd64\
  libubsan1:amd64\
- libreadline-dev:amd64\
- libblas-dev:amd64\
- liblapack-dev:amd64
+ libreadline-dev:amd64
 
 for i in addr2line c++filt cpp-11 g++-11 gcc-11 gcov-11 gcov-dump-11 gcov-tool-11 size strings; do \
         ln -s /usr/bin/x86_64-linux-gnu-$i /usr/x86_64-linux-gnu/bin/$i; done && \
