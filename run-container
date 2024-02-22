@@ -6,7 +6,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 maindir=""
 container_name=cs1270-dev
 network_name=net-cs1270
-github_org=CSCI-1270-Staff
+github_org=csci-1270-staff
 default_user="cs1270-user"  # Username to use by default
 
 image_name=cs1270-dev
@@ -213,7 +213,7 @@ add_port_if_open() {
 
 start_new_container() {
     netarg=
-    add_port_if_open 7169
+    add_port_if_open 8169
 
     uidflags=
     hostflags=
