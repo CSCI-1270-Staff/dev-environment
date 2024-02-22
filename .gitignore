@@ -8,4 +8,9 @@ docker/.image-version
 .vscode
 .gitconfig
 .bash_history
-home/
+
+# exclude all home files except configuration
+home/*
+!home/.bashrc
+!home/.bash_profile
+!home/.profile
