@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 
-LABEL org.opencontainers.image.source=https://github.com/CSCI-1270-Staff/container-dev
+LABEL org.opencontainers.image.source=https://github.com/CSCI-1270-Staff/dev-environment
 
 # copy new sources.list
 COPY --chown=root:root sources.list /etc/apt/sources.list
