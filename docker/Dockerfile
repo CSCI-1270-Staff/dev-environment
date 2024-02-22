@@ -26,5 +26,5 @@ USER cs1270-user
 
 ENTRYPOINT ["container-entrypoint"]
 
-WORKDIR /home/cs1270
+WORKDIR /home/cs1270-user
 CMD ["/bin/bash", "-l"]
