@@ -114,8 +114,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-mkdir -p ~/etc
-
 # These environment variables tell our shell
 # about the locations of the Go toolchain
 export PATH=$PATH:/usr/local/go/bin
