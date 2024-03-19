@@ -114,7 +114,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# These environment variables tell our shell
-# about the locations of the Go toolchain
-export PATH=$PATH:/usr/local/go/bin
+# This environment variables tells our shell
+# about the locations of the Go and Python toolchains
+export PATH="$PATH:/usr/local/go/bin:/opt/conda/bin"
 
