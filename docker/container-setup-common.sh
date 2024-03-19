@@ -29,12 +29,6 @@ apt-get -y install\
  file\
  xxd
 
-apt-get install -y python3 \
-	python3-pip \
-	python3-dev \
-	python3-setuptools \
-	python3-venv
-
 # install interactive programs (emacs, vim, nano, man, sudo, etc.)
 apt-get -y install\
  bc\
@@ -66,6 +60,12 @@ apt-get -y install\
  pv\
  traceroute\
  tshark
+
+apt-get install -y python3 \
+	python3-pip \
+	python3-dev \
+	python3-setuptools \
+	python3-venv
 
 # remove unneeded .deb files
 rm -r /var/lib/apt/lists/*
