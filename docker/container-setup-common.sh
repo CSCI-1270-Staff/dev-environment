@@ -29,12 +29,6 @@ apt-get -y install\
  file\
  xxd
 
-apt-get install -y python3 \
-	python3-pip \
-	python3-dev \
-	python3-setuptools \
-	python3-venv
-
 # install interactive programs (emacs, vim, nano, man, sudo, etc.)
 apt-get -y install\
  bc\
@@ -66,6 +60,29 @@ apt-get -y install\
  pv\
  traceroute\
  tshark
+
+apt-get install -y python3 \
+	python3-pip \
+	python3-dev \
+	python3-setuptools \
+	python3-venv
+
+
+# TODO: check this works on arm64
+# Install conda so we can install jupyterlab and pandas (for SQL assignment).
+# We always download and install the latest miniconda3,
+# and then downgrade python to specific version.
+# We could instead download a specific miniconda3 version,
+# but that would require baking in the URLs for
+# different Miniconda installer versions into the Dockerfile.
+MINICONDA_URL="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"; \
+    wget --quiet $MINICONDA_URL -O /tmp/miniconda.sh && \
+    /bin/bash /tmp/miniconda.sh -b -p /opt/conda && \
+    rm /tmp/miniconda.sh && \
+    /opt/conda/bin/conda clean --all
+# PIP_TARGET="/opt/conda/lib/python${FROM_PYTHON_VERSION}/site-packages"
+conda install -c conda-forge jupyterlab
+conda install -c conda-forge gxx_linux-64==11.1.0 pandas
 
 # remove unneeded .deb files
 rm -r /var/lib/apt/lists/*

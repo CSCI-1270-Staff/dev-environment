@@ -214,6 +214,7 @@ add_port_if_open() {
 start_new_container() {
     netarg=
     add_port_if_open 8169
+		add_port_if_open 8888
 
     uidflags=
     hostflags=
