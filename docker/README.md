@@ -6,7 +6,7 @@ minimal CS 1270 environment, including Linux, on a macOS or Windows
 computer, without the overhead of a full virtual machine like VMware
 Workstation, VMware Fusion, or VirtualBox.
 
-It should be possible to do *all* CS 1270 assignments in the CS 1270 Docker
+It is advisable to do most CS 1270 assignments in the CS 1270 Docker
 container.
 
 Advantages of using a container environment with Docker:
@@ -22,8 +22,6 @@ Disadvantages of Docker:
   to run all CS 1270 programs exclusively in the terminal.
 * Docker technology is less user-friendly than virtual machines. You’ll have
   to type weird commands.
-* You won’t get the fun, different feeling of a graphical Linux desktop,
-  like the one you see in lectures..
 
 ## Loading the CS 1270 Docker container
 
