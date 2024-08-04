@@ -8,7 +8,7 @@ ENV TZ=${TZ}
 
 # include manual pages and documentation
 ARG DEBIAN_FRONTEND=noninteractive
-ENV LANG en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 COPY container-setup-amd64.sh /usr/local/bin/container-setup-amd64
 COPY container-setup-common.sh /usr/local/bin/container-setup-common

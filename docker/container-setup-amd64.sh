@@ -11,13 +11,13 @@ export TZ=America/New_York
 # set up default locale
 export LANG=en_US.UTF-8
 
-apt-get update &&\
+apt update &&\
   yes | unminimize
 
 # install GCC-related packages
 # removed gdb (c debugger), libblas-dev and liblapack-dev (linear algebra routines), and doc packages
 # potential to remove: g++-multilib (for cross-compiling to different architectures)
-apt-get update && apt-get -y install\
+apt -y install\
  build-essential\
  g++\
  g++-multilib\
