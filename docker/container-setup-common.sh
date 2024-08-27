@@ -16,14 +16,16 @@ locale-gen en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # install programs used for system exploration
-apt -y install blktrace linux-tools-generic strace tcpdump htop file xxd
+apt -y install blktrace linux-tools-generic strace tcpdump htop file xxd tldr
 
 # install interactive programs (emacs, vim, nano, man, sudo, etc.)
 apt -y install bc curl dc git git-doc man micro nano psmisc sudo wget screen tmux vim
-# emacs-nox\
 
 # install programs used for networking
 apt -y install net-tools dnsutils inetutils-ping iproute2 netcat nmap telnet time pv traceroute tshark
+
+# install commands used in course infrastructure
+apt -y install zip rsync jq
 
 # install python dependencies (needed for sql assignment)
 apt -y install python3-pip
@@ -31,7 +33,6 @@ pip install jupyterlab pandas
 
 # install Task
 sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
-
 
 # remove unneeded .deb files
 rm -r /var/lib/apt/lists/*
